@@ -20,6 +20,17 @@ const kegReducer = (state = kegReducerDefaultState, {type, id, keg, updates}) =>
           return keg;
         }
       });
+    case 'SELL_PINT':
+      return state.map(keg => {
+        if(keg.id === id) {
+          return {
+            ...keg,
+            pints: keg.pints - 1
+          }
+        } else {
+          return keg;
+        }
+      });
     default:
       return state;
   }

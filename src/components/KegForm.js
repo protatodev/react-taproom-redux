@@ -8,7 +8,7 @@ class KegForm extends React.Component {
       price: props.keg ? props.keg.price : '',
       brand: props.keg ? props.keg.brand : '',
       description: props.keg ? props.description : '',
-      errorMsg: ''
+      errorMsg: 'You must enter a <strong>NAME</strong> and a <strong>PRICE</strong> at the very least!'
     };
   }
 
@@ -55,7 +55,7 @@ class KegForm extends React.Component {
   render() {
     return(
       <div>
-        {this.state.errorMsg && <p>You must enter a <strong>NAME</strong> and a <strong>PRICE</strong> at the very least!</p>}
+        {this.state.errorMsg && <p>{this.state.errorMsg}</p>}
         <form onSubmit={this.onSubmit}>
           <input 
             type="text" 
@@ -73,14 +73,14 @@ class KegForm extends React.Component {
             type="text" 
             placeholder="Enter a brand"
             value={this.state.brand}
-            onChange={this.state.onBrandChange}
+            onChange={this.onBrandChange}
           />
           <textarea 
             placeholder="Enter a description for the new keg"
             value={this.state.description}
-            onChange={this.state.onDescriptionChange}  
+            onChange={this.onDescriptionChange}  
           ></textarea>
-          <button type="submit">Add Keg</button>
+          <button type="submit" disabled={this.state.errorMsg}>Add Keg</button>
         </form>
       </div>
     );

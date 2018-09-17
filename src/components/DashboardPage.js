@@ -4,7 +4,7 @@ import KegList from './KegList';
 const DashboardPage = () => (
   <div>
     <h1>Dashboard</h1>
-    <KegList/>
+    <KegList adminRights={false}/>
   </div>
 );
 

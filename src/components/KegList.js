@@ -3,7 +3,6 @@ import KegListItem from './KegListItem';
 import { connect } from 'react-redux';
 
 const KegList = (props) => {
-  console.log(props);
 
   return(
     <div>
@@ -12,7 +11,7 @@ const KegList = (props) => {
         props.kegs.map(keg => {
           return (
             <div key={keg.id}>
-              <KegListItem keg={keg}/>
+              <KegListItem adminRights={props.adminRights} keg={keg}/>
             </div>
           );
         })

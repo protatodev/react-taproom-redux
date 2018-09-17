@@ -10,6 +10,7 @@ export const addKeg = (
     type: 'ADD_KEG',
     keg: {
       id: uuid(),
+      pints: 124,
       name,
       description,
       price,
@@ -27,3 +28,9 @@ export const editKeg = (id, updates) => ({
   id,
   updates
 });
+
+export const sellPint = (id, updates) => ({
+  type: 'SELL_PINT',
+  id,
+  updates
+})

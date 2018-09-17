@@ -4,7 +4,7 @@ import KegList from './KegList';
 const AdminPage = () => (
   <div>
     <button>Add New Keg</button>
-    <KegList/>
+    <KegList adminRights={true}/>
   </div>
 );
 
