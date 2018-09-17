@@ -5,3 +5,5 @@ const NotFoundPage = () => (
     <h1>404! THIS PAGE DOES NOT EXIST.</h1>
   </div>
 );
+
+export default NotFoundPage;
