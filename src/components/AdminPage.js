@@ -1,9 +1,10 @@
 import React from 'react';
 import KegList from './KegList';
+import { Link } from 'react-router-dom';
 
 const AdminPage = () => (
   <div>
-    <button>Add New Keg</button>
+    <Link to='/create'><button>Add New Keg</button></Link>
     <KegList adminRights={true}/>
   </div>
 );

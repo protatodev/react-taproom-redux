@@ -8,7 +8,7 @@ class KegForm extends React.Component {
       price: props.keg ? props.keg.price : '',
       brand: props.keg ? props.keg.brand : '',
       description: props.keg ? props.description : '',
-      errorMsg: 'You must enter a <strong>NAME</strong> and a <strong>PRICE</strong> at the very least!'
+      errorMsg: props.keg ? '' : 'You must enter a NAME and a PRICE at the very least!'
     };
   }
 

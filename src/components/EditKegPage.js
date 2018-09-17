@@ -9,7 +9,7 @@ const EditKegPage = (props) => (
     <KegForm
       keg={props.keg}
       onSubmit={keg => {
-        props.dispatch(editKeg(props.keg.id), keg);
+        props.dispatch(editKeg(props.keg.id, keg));
         props.history.push('/admin');
       }}
     />
