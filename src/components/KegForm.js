@@ -80,7 +80,7 @@ class KegForm extends React.Component {
             value={this.state.description}
             onChange={this.onDescriptionChange}  
           ></textarea>
-          <button type="submit" disabled={this.state.errorMsg}>Add Keg</button>
+          <button type="submit" disabled={this.state.errorMsg}>{this.props.keg ? 'Edit Keg' : 'Add Keg'}</button>
         </form>
       </div>
     );
