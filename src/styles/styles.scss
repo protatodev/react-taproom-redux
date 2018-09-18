@@ -25,6 +25,24 @@
     color: green;
 }
 
+.item {
+    display: inline-block;
+    width: 500px;
+    height: 250px;
+    padding: 10px;
+    margin: 25px;
+    margin-left: 10%;
+    border: 1px solid black;
+    transition: 0.75s;
+    background: #F8F8FF;
+}
+
+.item:hover {
+    transition: 0.75s;
+    background: black;
+    color: white;
+}
+
 header {
     background: linear-gradient(to bottom, #996633 0%, #993333 100%);
     text-align: center;
@@ -60,3 +78,13 @@ header {
     margin: auto;
     background: lightblue;
 }   
+
+input {
+    padding: 10px;
+    margin: 10px;
+}
+
+textarea {
+    padding: 10px;
+    margin: 10px;
+}

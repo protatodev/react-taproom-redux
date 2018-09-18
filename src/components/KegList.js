@@ -9,9 +9,9 @@ const KegList = (props) => {
       {
         props.kegs.map(keg => {
           return (
-            <div key={keg.id}>
-              <KegListItem adminRights={props.adminRights} keg={keg}/>
-            </div>
+            // <div key={keg.id}>
+            <KegListItem adminRights={props.adminRights} key={keg.id} keg={keg}/>
+            // </div>
           );
         })
       }
