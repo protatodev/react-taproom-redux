@@ -4,8 +4,8 @@ import { NavLink } from 'react-router-dom';
 const Header = () => (
   <header>
     <h1>Redux Tap Room</h1>
-    <NavLink to="/" activeClassName="is-active" exact={true}>Dashboard</NavLink> |
-    <NavLink to="/admin" activeClassName="is-active">Admin</NavLink> |
+    <NavLink to="/" className="nav-button" activeClassName="is-active" exact={true}>Dashboard</NavLink>
+    <NavLink to="/admin" className="nav-button" activeClassName="is-active">Admin</NavLink>
   </header>
 );
 

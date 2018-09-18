@@ -10,9 +10,44 @@
 }
 
 .pints-100 {
-    color: greenyellow;
+    color: #d4f442
 }
 
 .pints {
     color: green;
+}
+
+.price-high {
+    color: orange;
+}
+
+.price-low {
+    color: green;
+}
+
+header {
+    background: linear-gradient(to bottom, #996633 0%, #993333 100%);
+    text-align: center;
+    padding: 30px;
+    color: white;
+}
+
+.jumbotron {
+    text-align: center;
+}
+
+.nav-button {
+    border: 1px solid black;
+    padding: 20px 50px;
+    margin: 20px 20px;
+    transition: 1s;
+    color: black;
+    background: white;
+    max-width: 200px;
+}
+
+.nav-button:hover {
+    transition: 1s;
+    background: black;
+    color: white;
 }

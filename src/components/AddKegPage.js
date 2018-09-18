@@ -5,7 +5,9 @@ import { addKeg } from '../actions/keg';
 
 const AddKegPage = (props) => (
   <div>
-    <h1>Add A New Keg</h1>
+    <div className="jumbotron">
+      <h1>Add A New Keg</h1>
+    </div>
     <KegForm
       onSubmit={keg => {
         props.dispatch(addKeg(keg));

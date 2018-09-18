@@ -7,7 +7,7 @@ class KegForm extends React.Component {
       name: props.keg ? props.keg.name : '',
       price: props.keg ? props.keg.price : '',
       brand: props.keg ? props.keg.brand : '',
-      description: props.keg ? props.description : '',
+      description: props.keg ? props.keg.description : '',
       errorMsg: props.keg ? '' : 'You must enter a NAME and a PRICE at the very least!'
     };
   }
@@ -38,7 +38,7 @@ class KegForm extends React.Component {
 
   onDescriptionChange = e => {
     const description = e.target.value;
-    this.setState(() => ({ description }))
+    this.setState(() => ({ description }));
   }
 
   onSubmit = e => {
@@ -54,33 +54,39 @@ class KegForm extends React.Component {
   
   render() {
     return(
-      <div>
+      <div className="jumbotron">
         {this.state.errorMsg && <p>{this.state.errorMsg}</p>}
         <form onSubmit={this.onSubmit}>
-          <input 
-            type="text" 
-            placeholder="Name the new keg"
-            value={this.state.name}
-            onChange={this.onNameChange}
-          />
-          <input 
-            type="text" 
-            placeholder="Price the new keg"
-            value={this.state.price}
-            onChange={this.onPriceChange}
-          />
-          <input 
-            type="text" 
-            placeholder="Enter a brand"
-            value={this.state.brand}
-            onChange={this.onBrandChange}
-          />
-          <textarea 
-            placeholder="Enter a description for the new keg"
-            value={this.state.description}
-            onChange={this.onDescriptionChange}  
-          ></textarea>
-          <button type="submit" disabled={this.state.errorMsg}>{this.props.keg ? 'Edit Keg' : 'Add Keg'}</button>
+          <div className="form-group">
+            <input
+              type="text"
+              placeholder="Name the new keg"
+              value={this.state.name}
+              onChange={this.onNameChange}
+              className="form-control"
+            />
+            <input
+              type="text"
+              placeholder="Price the new keg"
+              value={this.state.price}
+              onChange={this.onPriceChange}
+              className="form-control"
+            />
+            <input
+              type="text"
+              placeholder="Enter a brand"
+              value={this.state.brand}
+              onChange={this.onBrandChange}
+              className="form-control"
+            />
+            <textarea
+              placeholder="Enter a description for the new keg"
+              value={this.state.description}
+              onChange={this.onDescriptionChange}
+              className="form-control"
+            ></textarea>
+          </div>
+          <button className="btn btn-primary" type="submit" disabled={this.state.errorMsg}>{this.props.keg ? 'Edit Keg' : 'Add Keg'}</button>
         </form>
       </div>
     );

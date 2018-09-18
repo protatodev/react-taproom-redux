@@ -6,7 +6,6 @@ const KegList = (props) => {
 
   return(
     <div>
-      <h3>Here is what we currently have on tap!</h3>
       {
         props.kegs.map(keg => {
           return (

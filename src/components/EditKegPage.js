@@ -5,7 +5,9 @@ import { editKeg, removeKeg, sellPint } from '../actions/keg';
 
 const EditKegPage = (props) => (
   <div>
-    <h1>Edit Keg</h1>
+    <div className="jumbotron">
+      <h1>Edit Keg</h1>
+    </div>
     <KegForm
       keg={props.keg}
       onSubmit={keg => {
@@ -18,11 +20,11 @@ const EditKegPage = (props) => (
         props.dispatch(removeKeg({ id: props.keg.id }));
         props.history.push('/admin');
       }}
+      className="btn btn-danger"
     >Remove</button>
     <button
-      onClick={() => {
-        props.dispatch(sellPint(props.keg.id, props.keg))
-      }}
+      onClick={() => { if(props.keg.pints > 0) props.dispatch(sellPint(props.keg.id, props.keg))}}
+      className="btn btn-success"
     >Sell Pint</button>
     <p>Pint's left: <span className={props.keg.pints > 100 ? 'pints' : props.keg.pints > 50 ? 'pints-100' : props.keg.pints > 10 ? 'pints-50' : 'pints-10'}>{props.keg.pints}</span></p>
   </div>
