@@ -34,6 +34,7 @@ header {
 
 .jumbotron {
     text-align: center;
+    margin: 0;
 }
 
 .nav-button {
@@ -43,7 +44,7 @@ header {
     transition: 1s;
     color: black;
     background: white;
-    max-width: 200px;
+    min-width: 200;
 }
 
 .nav-button:hover {
@@ -51,3 +52,11 @@ header {
     background: black;
     color: white;
 }
+
+.pints-footer {
+    border: 1px solid black;
+    width: 400px;
+    text-align: center;
+    margin: auto;
+    background: lightblue;
+}   

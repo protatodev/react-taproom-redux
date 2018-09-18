@@ -7,6 +7,20 @@ const EditKegPage = (props) => (
   <div>
     <div className="jumbotron">
       <h1>Edit Keg</h1>
+      <div className="pints-footer">
+        <button
+          onClick={() => {
+            props.dispatch(removeKeg({ id: props.keg.id }));
+            props.history.push('/admin');
+          }}
+          className="btn btn-danger"
+        >Remove</button>
+        <button
+          onClick={() => { if (props.keg.pints > 0) props.dispatch(sellPint(props.keg.id, props.keg)) }}
+          className="btn btn-success"
+        >Sell Pint</button>
+        <p>PINTS REMAINING: <span className={props.keg.pints > 100 ? 'pints' : props.keg.pints > 50 ? 'pints-100' : props.keg.pints > 10 ? 'pints-50' : 'pints-10'}>{props.keg.pints}</span></p>
+      </div>
     </div>
     <KegForm
       keg={props.keg}
@@ -15,18 +29,7 @@ const EditKegPage = (props) => (
         props.history.push('/admin');
       }}
     />
-    <button
-      onClick={() => {
-        props.dispatch(removeKeg({ id: props.keg.id }));
-        props.history.push('/admin');
-      }}
-      className="btn btn-danger"
-    >Remove</button>
-    <button
-      onClick={() => { if(props.keg.pints > 0) props.dispatch(sellPint(props.keg.id, props.keg))}}
-      className="btn btn-success"
-    >Sell Pint</button>
-    <p>Pint's left: <span className={props.keg.pints > 100 ? 'pints' : props.keg.pints > 50 ? 'pints-100' : props.keg.pints > 10 ? 'pints-50' : 'pints-10'}>{props.keg.pints}</span></p>
+    
   </div>
 );
 
