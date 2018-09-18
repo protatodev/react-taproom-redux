@@ -24,7 +24,7 @@ const EditKegPage = (props) => (
         props.dispatch(sellPint(props.keg.id, props.keg))
       }}
     >Sell Pint</button>
-    <p>Pint's left: {props.keg.pints}</p>
+    <p>Pint's left: <span className={props.keg.pints > 100 ? 'pints' : props.keg.pints > 50 ? 'pints-100' : props.keg.pints > 10 ? 'pints-50' : 'pints-10'}>{props.keg.pints}</span></p>
   </div>
 );
 
@@ -35,3 +35,17 @@ const mapStateToProps = (state, props) => {
 };
 
 export default connect(mapStateToProps)(EditKegPage);
+
+
+
+// if (props.keg.pints > 100) {
+//   return 'pints';
+// } else if (props.keg.pints > 50) {
+//   return 'pints-100';
+// } else if (props.keg.pints > 10) {
+//   return 'pints-50';
+// } else {
+//   return 'pints-10';
+// }
+
+//props.keg.pints > 100 ? 'pints' : props.keg.pints > 50 ? 'pints-100' : props.keg.pints > 10 ? 'pints-50' : 'pints-10';

@@ -8,7 +8,7 @@ const kegReducer = (state = kegReducerDefaultState, {type, id, keg, updates}) =>
         keg
       ];
     case 'REMOVE_KEG':
-      return state.filter(p => p.id !== keg.id);
+      return state.filter(p => p.id !== id);
     case 'EDIT_KEG':
       return state.map(keg => {
         if(keg.id === id) {

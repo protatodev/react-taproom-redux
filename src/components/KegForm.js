@@ -11,7 +11,7 @@ class KegForm extends React.Component {
       errorMsg: props.keg ? '' : 'You must enter a NAME and a PRICE at the very least!'
     };
   }
-
+  
   onNameChange = e => {
     const name = e.target.value;
     this.setState(() => ({name}));
