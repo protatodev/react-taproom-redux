@@ -10,7 +10,7 @@
 
 This project is meant to mimic and recreate the angular tap-room project created in week 1 of angular. This project will attempt to recreate the structure and functionality of the angular app using React with Redux.
 
-![screen shot view](tap-room-structure.PNG)
+![screen shot view](tap-room-structure.png)
 
 
 ## Specifications
